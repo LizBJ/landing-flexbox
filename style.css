@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,300;1,600&display=swap');
+
+*{
+ /* reset styles*/
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body{
+    background: #f2f2f2;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor{
+    width: 95%;
+    max-width: 1100px;
+    
+    margin: 0 auto;
+    /*todo lo que sale del contenedor que se oculte*/
+    overflow: hidden;
+    display: flex;
+}
+nav{
+    height: 70px;
+    background: rgb(209, 63, 63);
+}
+.nav-content{
+ height: 100%;
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.enlaces{
+    text-decoration: none;
+    color: #ffff;
+    /*  
+    display:block → el elemento coge el ancho, el alto especificados y se coloca verticalmente a continuación del anterior. Si tiene contenido y no especificamos ancho ni alto, el ancho será el 100% de la capa que lo contiene y el alto será lo que ocupe el contenido.
+
+display:inline → el elemento no coje el ancho ni el alto y se coloca horizontalmente a continuación del anterior.
+
+display:inline-block → el elemento coge el ancho y el alto y se coloca horizontalmente a continuación del anterior.
+    
+    */
+    display:inline-block;
+    margin-right: 20px;
+}
+.principal{
+   /* height: 100vh;*//* habra scrol para evita  restamos el nav*/
+   height: calc(100vh - 70px);
+  
+   align-items: center;
+   justify-content: space-between;
+   
+}
+/*
+Nos permite estableces el tamaño de nuestros flex-items
+flex-basis-> reemplatan el width por flex-items
+*/
+
+.contenedor-textos{
+    flex-basis: 45%;
+}
+.ilustracion{
+    /*flex-basis: 50%;*/
+    width: 100%;
+}
+.titulo{
+    font-size: 48px;
+    font-weight: 700;
+}
+.copy{
+    margin: 20px 0;
+    font-weight: 300;
+    font-size: 24px;
+}
+.cta{
+    display: inline-block;
+    background: crimson;
+    color: white;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+}
+@media screen and (max-width:800px){
+
+    .nav-content{
+        justify-content: space-evenly;
+    }
+    .enlaces{
+        margin: 0;
+    }
+    .principal{
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 40px;
+    }
+    .ilustracion{
+        flex-grow: 1;
+        max-width: 95%;
+    }
+    .contenedor-textos{
+      width: 100%;
+      flex-basis: 40%;
+    }
+}
+
+@media screen and (max-width:500px){
+
+   
+    .contenedor-textos{
+   text-align: center;
+    }
+    .titulo{
+        font-size: 33px;
+    }
+    .copy{
+        font-size: 20px;
+    }
+}
